@@ -249,7 +249,6 @@ void speak(uint8_t Choose){
 */
 int main(){
 	uint8_t Key_Num, Key_tmp, data;
-	OLED_Init();  // 屏幕显示，测试使用
 	CDCE_I2C_Init();  // 初始化与CDCE913芯片进行I2C通信的引脚
 	LED_Init();  // 初始化控制LAMP和CTRL的引脚。CTRL用来控制CDCE913间断发送信号，LAMP使用led灯观察信号变化
 	Key_Init();  // 初始化与8421拨码开关相连的引脚
@@ -263,11 +262,6 @@ int main(){
 	}
 
 	Send_Choose(Key_Num);
-	
-	//OLED_ShowString (3,1,"data:");  // 测试数据
-	//OLED_ShowHexNum (3,6,data, 2);
-	//OLED_ShowString (1,1,"Num:");
-	//OLED_ShowString (2,1,"tmp:");
 
 	while(1){
 		/* 
@@ -278,8 +272,6 @@ int main(){
 		if (Key_tmp > 10){
 			Key_tmp = 10;
 		}
-		// OLED_ShowNum (1,5,Key_tmp,3);
-		// OLED_ShowNum (2,5,Key_Num,3);
 		if(Key_Num != Key_tmp){
 			Send_Choose(Key_tmp);
 			Key_Num = Key_tmp;
