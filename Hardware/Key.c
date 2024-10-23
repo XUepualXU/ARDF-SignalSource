@@ -1,6 +1,11 @@
 #include "stm32f10x.h"                  // Device header
 #include "DELAY.H"
 
+/*
+  * @brief  初始化读取8421拨码开关对应的引脚
+  * @param  None
+  * @retval None
+*/
 void Key_Init(void){
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 	
@@ -11,7 +16,11 @@ void Key_Init(void){
 	
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
-
+/*
+  * @brief  按位读取8421拨码开关的状态，组成二进制台号
+  * @param  None
+  * @retval 得到8421拨码开关组成的台号
+*/
 uint8_t Key_GetNum(void){
 	uint8_t KeyNum = 0;
 	if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12) == 1){
