@@ -250,7 +250,7 @@ void speak(uint8_t Choose){
 int main(){
 	uint8_t Key_Num, Key_tmp, data;
 	OLED_Init();  // 屏幕显示，测试使用
-	//CDCE_I2C_Init();  // 初始化
+	CDCE_I2C_Init();  // 初始化与CDCE913芯片进行I2C通信的引脚
 	LED_Init();  // 初始化控制LAMP和CTRL的引脚。CTRL用来控制CDCE913间断发送信号，LAMP使用led灯观察信号变化
 	Key_Init();  // 初始化与8421拨码开关相连的引脚
 
