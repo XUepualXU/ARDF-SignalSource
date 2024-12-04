@@ -4,8 +4,8 @@
 #define Addr      0xCA         // 向左平移一位之后的I2C总线上CDCE913地址
 #define RCC_APB2Periph_GPIOX RCC_APB2Periph_GPIOA
 #define GPIOX     GPIOA        // 使用的GPIO
-#define SCL_Pin   GPIO_Pin_2   // I2C通信中的时钟线
-#define SDA_Pin   GPIO_Pin_1   // I2C通信中的数据线
+#define SCL_Pin   GPIO_Pin_4   // I2C通信中的时钟线
+#define SDA_Pin   GPIO_Pin_3   // I2C通信中的数据线
 #define Daley  10              // I2C通信时，让数据在总线上的停留时间，防止读取数据发生差错
 
 /*
